@@ -5,7 +5,7 @@
   </header>
 
   <% if enhanced_cart.empty? %>
-    <div class="alert alert-info" role="alert">Your cart is currently empty! Please add some products to your shopping cart. Choose items from the wide selection of plants we offer.  <%= link_to "Shop here", root_path, class: "nav-link" %>
+    <div class="alert alert-info" role="alert">Your cart is currently empty! Please add some products to your shopping cart. <%= link_to "Shop here", root_path, class: "nav-link" %>
     </div>
   <% else %>
   <div class="panel panel-default items">
