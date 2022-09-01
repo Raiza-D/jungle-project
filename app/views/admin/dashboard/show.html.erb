@@ -1,2 +1,10 @@
 <h1>Admin::Dashboard#show</h1>
+
+<p>Current product count: <%= @product_count %></p>
+<p>Current plant category count: <%= @categories_count %></p>
+
+<p><a href="<%= admin_products_path %>" >Product listing page</a></p>
+
+<p><%= link_to "Product listing page", admin_products_path %></p>
+
 <p>Find me in app/views/admin/dashboard/show.html.erb</p>
