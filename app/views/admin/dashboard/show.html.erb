@@ -1,8 +1,14 @@
 <h1>Admin::Dashboard#show</h1>
 
-<p>Current product count: <%= @product_count %></p>
-<p>Current plant category count: <%= @categories_count %></p>
+<br />
 
-<p><%= link_to "Product listing page", admin_products_path %></p>
+<ul class="list-group">
+  <li class="list-group-item">Current product count: <%= @product_count %></li>
+  <li class="list-group-item">Current count - plant categories: <%= @categories_count %></li>
+</ul>
+
+<br />
+
+<p><%= link_to "Product listing page", admin_products_path, class: 'nav-link' %></p>
 
 <p>Find me in app/views/admin/dashboard/show.html.erb</p>
