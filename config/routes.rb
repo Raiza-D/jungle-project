@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   
+  # get 'users/new'
+  get '/register' => 'users#new'
+
   get 'about' => 'about#index'
   
   root to: 'products#index'
