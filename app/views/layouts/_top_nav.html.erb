@@ -68,11 +68,10 @@
           My Cart (<%= cart.size %>) <% end %>
         </li>
 
-        
-        <li class="nav-link">
-          Register
+        <li>
+        <%= link_to "Register", register_path, class: "nav-link" %>
         </li>
-
+        
         <li class="nav-link">
           Logout
         </li>
