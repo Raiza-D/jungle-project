@@ -4,9 +4,6 @@ class Admin::CategoriesController < ApplicationController
     @categories = Category.all
   end
 
-
-  # Select count(quantity) FROM products GROUP BY category_id
-
   def new
     @category = Category.new
   end
