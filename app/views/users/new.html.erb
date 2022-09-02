@@ -1,5 +1,13 @@
 <h1>Users#new</h1>
 
+<%= form_for :user, url: '/register' do |f| %>
 
+  First & Last Name: <%= f.text_field :name %>
+  Email: <%= f.text_field :email %>
+  Password: <%= f.password_field :password %>
+  Password Confirmation: <%= f.password_field :password_confirmation %>
+  <%= f.submit "Register" %>
+
+<% end %>
 
 <p>Find me in app/views/users/new.html.erb</p>
