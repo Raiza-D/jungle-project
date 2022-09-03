@@ -2,13 +2,31 @@
 <br />
   <h1>Register</h1>
 <br />
-  <%= form_for :user, url: '/register' do |f| %>
 
-    First & Last Name: <%= f.text_field :name %>
-    Email: <%= f.text_field :email %>
-    Password: <%= f.password_field :password %>
-    Password Confirmation: <%= f.password_field :password_confirmation %>
-    <%= f.submit "Register" %>
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-1">
+      <%= form_for :user, url: '/register' do |f| %>
 
-  <% end %>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, class: 'form-control' %>
+      </div>
+
+      <br />
+
+      <%= f.submit 'Register', class: 'btn btn-primary' %>
+
+      <% end %>
+    </div>
+  </div>
 </section>
