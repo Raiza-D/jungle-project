@@ -2,15 +2,16 @@ Rails.application.routes.draw do
   
   root to: 'products#index'
   
-    # get 'users/new'
+  # Register routes
   get '/register' => 'users#new'
   post '/register' => 'users#create'
   
-  # get 'sessions/new'
+  # Login routes
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
+  # About page
   get 'about' => 'about#index'
 
   resources :products, only: [:index, :show]
