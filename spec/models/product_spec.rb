@@ -26,10 +26,19 @@ RSpec.describe Product, type: :model do
 
     it 'should result in an error if price is blank' do
       @product = Product.new(name: 'True Jasmine', description: 'Suspendisse eleifend imperdiet tellus non consectetur.', category: @category, quantity: 60)
+      # if price: nil, why does my test fail?
 
       @product.save
 
       expect(@product.errors.full_messages).to include("Price can't be blank")
+    end
+
+    it 'should result in an error if quantity is blank' do
+      @product = Product.new(name: 'Chocolate Vine', description: 'Fusce in blandit libero', category: @category, quantity: nil, price: 2599)
+
+      @product.save
+      
+      expect(@product.errors.full_messages).to include("Quantity can't be blank")
     end
 
   end
