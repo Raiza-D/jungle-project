@@ -11,7 +11,7 @@ RSpec.describe Product, type: :model do
     it 'should save new product when all required fields are set' do
       @product = Product.new(name: 'White Rose', description: 'White roses have a profound, plain, and enigmatic side by their genuineness and their purity.', category: @category, quantity: 45, price: 3999)
 
-      @product.save!
+      @product.save
       
       expect(@product).to be_valid
     end
