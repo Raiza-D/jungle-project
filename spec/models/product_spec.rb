@@ -15,6 +15,14 @@ RSpec.describe Product, type: :model do
       
       expect(@product).to be_valid
     end
-    
+
+    it 'should result in an error if name is blank' do
+      @product = Product.new(name: nil, description: 'Fusce in blandit libero. Duis eget tincidunt lorem.', category: @category, quantity: 90, price: 2599)
+
+      @product.save
+
+      expect(@product.errors.full_messages).to include("Name can't be blank")
+    end
+
   end
 end
