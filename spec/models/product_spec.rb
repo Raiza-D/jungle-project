@@ -4,7 +4,10 @@ RSpec.describe Product, type: :model do
 
   before do
     @category = Category.new(name: 'Climbers')
-    @category.save!
+    @category.save
+    # Remove the bang operator here. Not needed. It's just a test.
+    # Bang operator MUTATES the object or variable that calls it.
+    # So be careful when using it. 
   end
 
   describe 'Validations' do
@@ -19,7 +22,18 @@ RSpec.describe Product, type: :model do
     it 'should produce an error if name is blank' do
       @product = Product.new(name: nil, description: 'Fusce in blandit libero. Duis eget tincidunt lorem.', category: @category, quantity: 90, price: 2599)
 
-      @product.save
+      @product.validate
+      # Do validation first, then save (using bang operator)
+      # BEST practice is to use 'validate' method, instead of actually changing the database.
+
+      # Use product.validate for tests instead of product.save
+      # Update all tests here.
+
+      # No need to set fields being tested to have value of nil. Just remove it.
+      # Wording on Compass confusing for this tip.
+
+      # ActiveRecord contains the default error messages that are produced.
+      # These error messages can be customized.
 
       expect(@product.errors.full_messages).to include("Name can't be blank")
     end
