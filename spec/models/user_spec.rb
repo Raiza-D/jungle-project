@@ -50,5 +50,17 @@ RSpec.describe User, type: :model do
       expect(@user2).not_to be_valid
     end
 
+    # Checks that email is not case sensitive
+    it 'checks that the email is not case sensitive' do
+      @user = User.new(name: 'Mick Jagger', email: 'MICKJAGGER@email.COM', password: '123', password_confirmation: '123')
+
+      @user2 = User.new(name: 'Jane Jagger', email: 'mickjagger@email.com', password: '123', password_confirmation: '123')
+
+      @user.save
+      @user2.validate
+
+      expect(@user2).not_to be_valid
+    end
+
   end
 end
