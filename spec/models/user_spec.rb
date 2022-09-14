@@ -38,5 +38,17 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages).to include("Email can't be blank")
     end
 
+    # Checks that the email does not already exist
+    it 'checks that the email does not already exist' do
+      @user = User.new(name: 'Atlas Desmoine', email: 'atlasdes@email.com', password: '1234', password_confirmation: '1234')
+
+      @user2 = User.new(name: 'Anne Doe', email: 'atlasdes@email.com', password: '123', password_confirmation: '123' )
+
+      @user.save
+      @user2.validate
+
+      expect(@user2).not_to be_valid
+    end
+
   end
 end
