@@ -17,7 +17,7 @@ RSpec.describe Product, type: :model do
     end
 
     it 'should produce an error if name is blank' do
-      @product = Product.new(name: nil, description: 'Fusce in blandit libero. Duis eget tincidunt lorem.', category: @category, quantity: 90, price: 2599)
+      @product = Product.new(description: 'Fusce in blandit libero. Duis eget tincidunt lorem.', category: @category, quantity: 90, price: 2599)
 
       @product.validate
 
@@ -33,7 +33,7 @@ RSpec.describe Product, type: :model do
     end
 
     it 'should produce an error if quantity is blank' do
-      @product = Product.new(name: 'Chocolate Vine', description: 'Fusce in blandit libero', category: @category, quantity: nil, price: 2599)
+      @product = Product.new(name: 'Chocolate Vine', description: 'Fusce in blandit libero', category: @category, price: 2599)
 
       @product.validate
       
@@ -41,7 +41,7 @@ RSpec.describe Product, type: :model do
     end
 
     it 'should produce an error if category is blank' do
-      @product = Product.new(name: 'Downy Clematis', description: 'Donec vel commodo', category: nil, quantity: 100, price: 5999)
+      @product = Product.new(name: 'Downy Clematis', description: 'Donec vel commodo', quantity: 100, price: 5999)
 
       @product.validate
 
