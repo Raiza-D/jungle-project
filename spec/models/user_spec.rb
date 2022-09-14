@@ -29,5 +29,14 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages).to include("Name can't be blank")
     end
 
+    # Email cannot be blank
+    it 'should produce an error if email is blank' do
+      @user = User.new(name: 'Tessa Rand', password: 'abc', password_confirmation: 'abc')
+
+      @user.validate
+
+      expect(@user.errors.full_messages).to include("Email can't be blank")
+    end
+
   end
 end
