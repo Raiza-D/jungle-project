@@ -94,6 +94,37 @@ RSpec.describe User, type: :model do
       expect(@user).to be(nil)
     end
 
+    # Invalid password
+    it 'should fail if password invalid' do
+      @user = User.new(name: 'Elizabeth Friar', email: 'elizabethf@gmail.com', password: 'abc12345', password_confirmation: 'abc12345')
+
+      @user.save
+      @user = User.authenticate_with_credentials("elizabethfriar@gmail.com", "abc")
+
+      expect(@user).to be(nil)
+    end
+
+    # Spaces before and/or after email address
+    it 'should pass with valid credentials, even though email address has whitespace at beginning and/or end' do
+
+      @user = User.new(name: 'Elizabeth Friar', email: 'elizabethf@gmail.com', password: 'abc12345', password_confirmation: 'abc12345')
+
+      @user.save
+      @user = User.authenticate_with_credentials("  elizabethf@gmail.com  ", "abc12345")
+
+      expect(@user).not_to be(nil)
+    end
+
+    # Email should not be case sensitive
+    it 'should pass with valid credentials, even though email address has uppercase(s)' do
+      @user = User.new(name: 'Elizabeth Friar', email: 'elizabethf@gmail.com', password: 'abc12345', password_confirmation: 'abc12345')
+      
+      @user.save
+      @user = User.authenticate_with_credentials("ELIZabethf@GMAIL.com", "abc12345")
+
+      expect(@user).not_to be(nil)
+    end
+
   end
 
 
