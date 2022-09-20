@@ -4,7 +4,7 @@ describe("jungle-rails plant app", () => {
   });
 
   it("Can click on a product to view it in more detail", () => {
-    cy.contains("Scented Blade").click()
+    cy.get(".products article").first().click()
   });
 
   it("The product detail is displayed", () => {
