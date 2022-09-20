@@ -17,5 +17,4 @@ describe("jungle-rails plant app", () => {
     cy.contains('My Cart (1)').should("be.visible");
   });
 
-
 });
