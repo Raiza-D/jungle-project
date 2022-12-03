@@ -12,6 +12,9 @@ Trees product page
 My Cart view
 !["My Cart view displaying items in your cart"](https://github.com/Raiza-D/jungle-rails/blob/master/docs/jungle-rails-my-cart.png?raw=true)
 
+Admin product management page
+!["Admin product management page"](https://github.com/Raiza-D/jungle-rails/blob/master/docs/jungle-rails-admin-productmgmt.png?raw=true)
+
 ## Setup
 
 1. Run `bundle install` to install dependencies
