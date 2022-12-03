@@ -3,7 +3,8 @@
 A mini e-commerce application built with Rails 6.1 for purposes of teaching Rails by example.
 
 ## Final Product
-
+The home page
+!["The home page"](https://github.com/Raiza-D/jungle-rails/blob/master/docs/jungle-rails-home.png?raw=true)
 
 ## Setup
 
