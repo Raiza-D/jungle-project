@@ -9,6 +9,9 @@ The home page
 Trees product page
 !["Trees product page"](https://github.com/Raiza-D/jungle-rails/blob/master/docs/jungle-rails-trees-products.png?raw=true)
 
+My Cart view
+!["My Cart view displaying items in your cart"](https://github.com/Raiza-D/jungle-rails/blob/master/docs/jungle-rails-my-cart.png?raw=true)
+
 ## Setup
 
 1. Run `bundle install` to install dependencies
